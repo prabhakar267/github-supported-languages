@@ -2,7 +2,7 @@
 # @Author: prabhakar
 # @Date:   2016-06-19 16:32:44
 # @Last Modified by:   Prabhakar Gupta
-# @Last Modified time: 2016-06-19 17:08:50
+# @Last Modified time: 2016-06-19 17:17:09
 
 import requests
 import sys
@@ -26,10 +26,10 @@ def main():
             print_flag = True
     
     if(len(sys.argv) > 1):
-        print languages_list
-    else:
         for i in languages_list:
             print i
+    else:
+        print languages_list
 
 
 if __name__ == "__main__":
