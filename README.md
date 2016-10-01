@@ -5,4 +5,4 @@ Script to get a list of all the languages which are currently supported by GitHu
 python main.py
 ```
 
-![screenshot](/screenshot/Screenshot from 2016-06-19 17:18:47.png?raw=true)
+![screenshot](/screenshot/Screenshot from 2016-06-19 17-18-47.png?raw=true)
