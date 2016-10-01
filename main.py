@@ -6,30 +6,42 @@
 
 import requests
 import sys
+import urllib2
 
 GITHUB_LINGUIST_URL = 'https://raw.githubusercontent.com/github/linguist/master/lib/linguist/languages.yml'
 
+def check_internet():
+    try:
+        response=urllib2.urlopen('http://74.125.228.100',timeout=1)
+        return True
+    except urllib2.URLError as err: pass
+    return False
+
 def main():
-    response = requests.get(GITHUB_LINGUIST_URL)
-    response_line_list = response.content.splitlines()
+    internet_connection = check_internet()
+    if (internet_connection):
+        response = requests.get(GITHUB_LINGUIST_URL)
+        response_line_list = response.content.splitlines()
 
-    languages_list = []
+        languages_list = []
 
-    print_flag = False
-    for line in response_line_list:
-        line = line.strip()
-        if print_flag:
-            line = line[:len(line)-1]
-            languages_list.append(line)
-            print_flag = False
-        if line == '':
-            print_flag = True
+        print_flag = False
+        for line in response_line_list:
+            line = line.strip()
+            if print_flag:
+                line = line[:len(line)-1]
+                languages_list.append(line)
+                print_flag = False
+            if line == '':
+                print_flag = True
     
-    if(len(sys.argv) > 1):
-        for i in languages_list:
-            print i
+        if(len(sys.argv) > 1):
+            for i in languages_list:
+                print i
+        else:
+            print languages_list
     else:
-        print languages_list
+        print "Internet connection unavailable"
 
 
 if __name__ == "__main__":
