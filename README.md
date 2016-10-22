@@ -6,3 +6,8 @@ python main.py
 ```
 
 ![screenshot](/screenshot/Screenshot from 2016-06-19 17-18-47.png?raw=true)
+
+## Contributors
+ + [Prabhakar Gupta](https://github.com/prabhakar267)
+ + [QzSG](https://github.com/QzSG)
+ + [Victor Magno](https://github.com/vctrmagno)
